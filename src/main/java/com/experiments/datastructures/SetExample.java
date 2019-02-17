@@ -10,16 +10,15 @@ public class SetExample {
 		Set<String> hash_set = new HashSet<String>();
 		hash_set.add("This");
 		hash_set.add("is");
-		hash_set.add("TCS");
+		hash_set.add("Canadian");
 		hash_set.add("Software");
 		hash_set.add("Consulting");
-		hash_set.add("TCS");
+		hash_set.add("Canadian");
 		hash_set.add("Company");
-		System.out.println("Set Output without the duplicated");
+		System.out.println("Set Output without the duplicated :" +hash_set);
 		
-		System.out.println(hash_set);
-		System.out.println("Sorted set after passing into TreeSet");
+		System.out.println(" ");
 		Set<String> tree_set = new TreeSet<String>(hash_set);
-		System.out.println(tree_set);
+		System.out.println("Sorted set after passing into TreeSet :" +tree_set);
 	}
 }
