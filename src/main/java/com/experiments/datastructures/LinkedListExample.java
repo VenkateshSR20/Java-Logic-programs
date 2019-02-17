@@ -14,20 +14,25 @@ public class LinkedListExample {
 		
 		linkedList.addFirst("First Item");
 		linkedList.addLast("Last Item");
+		System.out.println("");
 		System.out.println("LinkedList content after addition: "+linkedList);
 		
 		Object firstvar = linkedList.get(0);
+		System.out.println("");
 		System.out.println("First element: "+firstvar);
 		linkedList.set(0, "Changed first item");
 		Object firstvar2 = linkedList.get(0);
+		System.out.println("");
 		System.out.println("First element after update by set method: "+firstvar2);
 		
 		linkedList.removeFirst();
 		linkedList.removeLast();
+		System.out.println("");
 		System.out.println("LinkedList after deletion of first and last element:");
 		
 		linkedList.add(0, "Newly added item");
 		linkedList.remove(2);
+		System.out.println("");
 		System.out.println("Final Content: " +linkedList);
 	}
 }
