@@ -12,9 +12,9 @@ import org.junit.Test;
 //similar to this make it as Test annotation and make as test then only you can push to github
 public class HashmapExample {
 	
-    //@Test
+	//Make it as test class and call it  because its the project with maven
+	//@Test
 	public static void main(String[] args){
-	 //HashmapExample(){
 		HashMap<Integer, String> hmap = new HashMap<Integer, String>();
 		
 		hmap.put(1001, "venkatesh");
