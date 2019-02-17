@@ -24,17 +24,22 @@ public class ListExample {
 		list2.add(4);
 		list2.add(5);
 		list2.add(6);
-		System.out.println("The values of List L2 are :"+list2);
+		System.out.println("");
+		System.out.println("The values of List L2 are : "+list2);
 		
 		list1.addAll(1, list2);
-		System.out.println("Added elements :"+list1);
+		System.out.println("");
+		System.out.println("Added elements : "+list1);
 		
 		list1.remove(1);
-		System.out.println("Removed Element :"+list1);
+		System.out.println("");
+		System.out.println("Removed Element : "+list1);
 		
-		System.out.println(list1.get(3));
+		System.out.println("");
+		System.out.println("Getting the third element : "+list1.get(3));
 		
 		list1.set(0, 5);
-		System.out.println(list1);
+		System.out.println("");
+		System.out.println("Replace element : "+list1);
 	}	
 }
