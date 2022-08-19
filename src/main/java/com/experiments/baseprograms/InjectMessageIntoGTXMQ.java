@@ -1,6 +1,11 @@
 package main.java.com.experiments.baseprograms;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class InjectMessageIntoGTXMQ {
 
@@ -43,5 +48,57 @@ public class InjectMessageIntoGTXMQ {
 		String targetFile = System.getProperty("user.dir") + filePath + fileName;
 		String message = readTxtFile(targetFile);
 		writeMsgIntoMQ(message, mqName);
+	}
+	
+	public static String readFileAsString(String filePathAndName) throws Exception {
+		String data = "";
+		try {
+			data = new String(Files.readAllBytes(Paths.get(filePathAndName)));
+		}catch(IOException e) {
+			e.printStackTrace();
+			System.out.println("Failure! Unable to read the file and get data.");
+			throw new Exception();
+		}
+		return data;
+	}
+	
+	//READ INPUT TEXT FILE AND RETURN AS STRING
+	public static String readTxtFile(String fileName) throws Exception {
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(fileName));
+		}catch (FileNotFoundException e) {
+			System.out.println("Not able to read the file. \n" +e.getMessage());
+			throw new Exception();
+		}
+		try {
+			StringBuilder sb = new StringBuilder();
+			String line = null;
+			try {
+				line = br.readLine();
+			}catch(IOException e){
+				System.out.println("Not able to read the file. \n" + e.getMessage());
+				throw new Exception();
+			}
+			
+			while(line != null){
+				sb.append(line);
+				sb.append("\r\n");
+				try {
+					line = br.readLine();
+				}catch(IOException e) {
+					System.out.println("Not able to read the file. \n" + e.getMessage());
+					throw new Exception();
+				}
+			}
+			return sb.toString();
+		}finally {
+			try {
+				br.close();
+			}catch(IOException e) {
+				System.out.println("Not able to read teh file. \n" +e.getMessage());
+				throw new Exception();
+			}
+		}
 	}
 }
